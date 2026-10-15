@@ -608,13 +608,11 @@ flowchart TD
 
 **Author:** Muhammad Meelad Sultan · GitHub: [@meelad-sultan](https://github.com/meelad-sultan)
 
-**Development note.** This project was developed with assistance from Claude (Anthropic) for drafting code and documentation. The author is responsible for the repository; the code, tests and results are to be reviewed and reproduced by the author before release.
-
-**Data sources (please cite when using the data)**
+**Data sources**
 - Mushtaq, N., Farooqi, A., Khattak, J., Hussain, I., Mailloux, B., Bostick, B., Nghiem, A., van Geen, A., 2022. *Well water and drill cuttings from north Punjab, Pakistan v.2*, Version 1.0. Interdisciplinary Earth Data Alliance (IEDA). https://doi.org/10.26022/IEDA/112724
 - Podgorski, J., and Berg, M. (2020). Global threat of arsenic in groundwater. *Science* 368(6493), 845-850. doi:10.1126/science.aba1510 (data package and code: Eawag open data; contact joel.podgorski@eawag.ch, michael.berg@eawag.ch)
 
-**Methods literature** (bibliographic details written from memory; verify before citing)
+**Methods literature** 
 - Vovk, V., Gammerman, A. and Shafer, G. (2005). *Algorithmic Learning in a Random World*. Springer.
 - Lei, J., G'Sell, M., Rinaldo, A., Tibshirani, R. J. and Wasserman, L. (2018). Distribution-free predictive inference for regression. *Journal of the American Statistical Association* 113.
 - Romano, Y., Patterson, E. and Candes, E. (2019). Conformalized quantile regression. *Advances in Neural Information Processing Systems* 32.
