@@ -1,0 +1,18 @@
+# Real data: individual wells in north Punjab, Pakistan (Mushtaq et al. 2022, IEDA). Arsenic is a FIELD TEST-KIT reading
+# (categories 0, 10, 25, 50, 100, ... ug/L; 0 = below the kit's reading), so exceedance probability is the primary target.
+extends: default.yaml
+cv: {k: 4, block_km: 30, calib_frac: 0.25, local_bandwidth_km: 30, iw_clip: [0.05, 20.0]}
+gp: {max_n: 400}
+models: [naive, idw, gp, qgbm]
+methods: [none, split, cqr, cqr+local, cqr+iw]
+experiments:
+  cv_study: {reps: 3, schemes: [random, block, region]}
+  scarcity: {fractions: [0.1, 0.25, 0.5, 1.0], reps: 2, models: [gp, qgbm], methods: [none, split, cqr, cqr+iw]}
+real:
+  name: "North Punjab (Pakistan) individual wells, field-kit arsenic"
+  path: data/processed/punjab_wells.csv
+  columns: {lat: lat, lon: lon, target: as_ugL, covariates: [depth_ft, ec, ph, no3, fe, so4, f], region: null, time: null, site: null}
+  limit: 10
+  limit_note: "WHO guideline value for arsenic in drinking water, 10 ug/L; kit categories are 0, 10, 25, 50, 100, ..."
+  nonpositive: zero
+  region_clusters: 5

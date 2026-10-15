@@ -1,0 +1,43 @@
+{
+  "punjab": {
+    "source_file": "2724-3_ECL_Mushtaq_Well_individual_Dataset_v2.xlsx",
+    "sha256": "bf97d87343f14219e60489af83d944638cd40801b38272d649a7cb56f4bb72e9",
+    "rows_in_workbook": 20578,
+    "rows_written": 20575,
+    "as_values": {
+      "0": 14314,
+      "10": 1856,
+      "20": 1,
+      "25": 1051,
+      "50": 1330,
+      "100": 1135,
+      "200": 497,
+      "300": 270,
+      "400": 9,
+      "500": 79,
+      "1000": 33
+    },
+    "share_gt_10": 0.2140947752126367,
+    "share_gt_50": 0.09832320777642771,
+    "missing_fraction": {
+      "depth_ft": 0.0,
+      "ec": 0.0,
+      "ph": 0.0,
+      "no3": 0.0703,
+      "fe": 0.0523,
+      "so4": 0.0528,
+      "f": 0.0287
+    }
+  },
+  "global": {
+    "source_file": "arsenic_concentrations_predictor_data.csv",
+    "sha256": "600426b148a8449951197c6b370ecb4e76be9d620c95d278a689c93c689dd27f",
+    "rows_parsed": 56179,
+    "malformed_lines_skipped": 11,
+    "rows_with_missing_values_dropped": 4,
+    "rows_written": 56175,
+    "n_predictors": 51,
+    "share_gt_10": 0.19113484646194925,
+    "share_nondetect_placeholder": 0.25461504227859366
+  }
+}

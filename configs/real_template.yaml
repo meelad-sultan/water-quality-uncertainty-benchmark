@@ -1,0 +1,22 @@
+# Template for your own monitoring CSV. Copy, edit the marked lines, then check the mapping with:
+#   python -m wqub check --config configs/real_template.yaml
+extends: default.yaml
+models: [naive, idw, gp, qgbm]
+methods: [none, split, cqr, cqr+local, cqr+iw]
+experiments:
+  cv_study: {reps: 3, schemes: [random, block, region]}
+real:
+  name: "My monitoring data"                       # shown in tables and figures
+  path: data/raw/my_data.csv                       # CSV with one row per measurement
+  columns:
+    lat: latitude                                  # decimal degrees
+    lon: longitude
+    target: concentration                          # measured value, any unit
+    covariates: []                                 # list of numeric columns, or the word "all"
+    region: null                                   # optional column that defines held-out regions
+    time: null                                     # optional numeric time in years (adds forward-in-time validation)
+    site: null                                     # optional site id (adds leave-site-out validation)
+  limit: 10                                        # exceedance threshold in the same unit as the target
+  nonpositive: half_min                            # half_min | drop | zero (how to treat values <= 0)
+  region_clusters: 5                               # used when no region column is given
+cv: {k: 4, block_km: 50, local_bandwidth_km: 50}

@@ -1,0 +1,32 @@
+{
+  "n": 20575,
+  "regions": {
+    "0": 7275,
+    "1": 1895,
+    "2": 3064,
+    "3": 1719,
+    "4": 6622
+  },
+  "target_log1p_mean": 1.132199088295829,
+  "target_log1p_sd": 1.8169245834324523,
+  "exceedance_rate": 0.2140947752126367,
+  "covariates": [
+    "depth_ft",
+    "ec",
+    "ph",
+    "no3",
+    "fe",
+    "so4",
+    "f"
+  ],
+  "has_time": false,
+  "meta": {
+    "name": "North Punjab (Pakistan) individual wells, field-kit arsenic",
+    "n_rows_in_file": 20575,
+    "n_used": 20575,
+    "covariate_missing_fraction": 0.02916160388821385,
+    "limit_raw": 10,
+    "limit_note": "WHO guideline value for arsenic in drinking water, 10 ug/L; kit categories are 0, 10, 25, 50, 100, ...",
+    "target_column": "as_ugL"
+  }
+}

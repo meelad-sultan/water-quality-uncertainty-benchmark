@@ -1,0 +1,144 @@
+{
+  "wqub_version": "0.1.0",
+  "mode": "real",
+  "config_path": "configs/real_global.yaml",
+  "config": {
+    "seed": 20261012,
+    "alpha": 0.2,
+    "exceed_note": "exceedance = target above a threshold; for the synthetic world the threshold is the 80th percentile",
+    "synthetic": {
+      "n_sites": 1200,
+      "extent_km": 400,
+      "n_clusters": 8,
+      "field_range_km": 60,
+      "field_sd": 0.8,
+      "noise_sd": 0.35,
+      "exceed_quantile": 0.8,
+      "shift": {
+        "region_offset": 0.6,
+        "covariate_shift": 1.0,
+        "noise_inflation": 1.0
+      },
+      "temporal": {
+        "n_sites": 300,
+        "obs_per_site": 12,
+        "years": 5
+      }
+    },
+    "cv": {
+      "k": 4,
+      "block_km": 1000,
+      "calib_frac": 0.25,
+      "local_bandwidth_km": 300,
+      "iw_clip": [
+        0.05,
+        20.0
+      ]
+    },
+    "gp": {
+      "max_n": 400
+    },
+    "qgbm": {
+      "max_iter": 120,
+      "learning_rate": 0.08,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+    },
+    "models": [
+      "naive",
+      "qgbm"
+    ],
+    "methods": [
+      "none",
+      "split",
+      "cqr",
+      "cqr+iw"
+    ],
+    "experiments": {
+      "cv_study": {
+        "reps": 2,
+        "schemes": [
+          "random",
+          "block",
+          "region",
+          "box"
+        ]
+      },
+      "scarcity": {
+        "fractions": [
+          0.1,
+          0.25,
+          0.5,
+          1.0
+        ],
+        "reps": 3,
+        "models": [
+          "gp",
+          "qgbm"
+        ],
+        "methods": [
+          "none",
+          "split",
+          "cqr",
+          "cqr+local",
+          "cqr+iw"
+        ]
+      },
+      "spatiotemporal": {
+        "reps": 3,
+        "models": [
+          "naive",
+          "gp",
+          "qgbm"
+        ],
+        "methods": [
+          "none",
+          "split",
+          "cqr",
+          "cqr+iw"
+        ]
+      }
+    },
+    "real": {
+      "path": "data/processed/global_arsenic.csv",
+      "name": "Global groundwater arsenic (1 km pixels, 51 predictors)",
+      "columns": {
+        "lat": "lat",
+        "lon": "lon",
+        "target": "as_ppb",
+        "covariates": "all",
+        "region": null,
+        "time": null,
+        "site": null
+      },
+      "coords": "global",
+      "limit": 10,
+      "limit_note": "WHO guideline value 10 ug/L; values of 1e-7 in the source file are placeholders for non-detects",
+      "nonpositive": "zero",
+      "region_clusters": 8,
+      "run_scarcity": false,
+      "boxes": [
+        {
+          "name": "South Asia window (includes Pakistan)",
+          "lat": [
+            23,
+            37
+          ],
+          "lon": [
+            60,
+            78
+          ]
+        }
+      ]
+    }
+  },
+  "total_s": 192.6,
+  "python": "3.12.3",
+  "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "pandas": "3.0.2",
+    "scikit-learn": "1.8.0"
+  }
+}

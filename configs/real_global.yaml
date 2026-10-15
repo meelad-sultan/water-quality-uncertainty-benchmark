@@ -1,0 +1,20 @@
+# Real data: global groundwater arsenic points averaged to 1 km pixels with 51 predictors (Podgorski and Berg 2020, Eawag).
+# Coordinates are plate-carree km (grouping only); models are naive and gradient boosting; transfer test = South Asia window.
+extends: default.yaml
+cv: {k: 4, block_km: 1000, calib_frac: 0.25, local_bandwidth_km: 300, iw_clip: [0.05, 20.0]}
+models: [naive, qgbm]
+methods: [none, split, cqr, cqr+iw]
+experiments:
+  cv_study: {reps: 2, schemes: [random, block, region, box]}
+real:
+  name: "Global groundwater arsenic (1 km pixels, 51 predictors)"
+  path: data/processed/global_arsenic.csv
+  columns: {lat: lat, lon: lon, target: as_ppb, covariates: all, region: null, time: null, site: null}
+  coords: global
+  limit: 10
+  limit_note: "WHO guideline value 10 ug/L; values of 1e-7 in the source file are placeholders for non-detects"
+  nonpositive: zero
+  region_clusters: 8
+  run_scarcity: false
+  boxes:
+    - {name: "South Asia window (includes Pakistan)", lat: [23, 37], lon: [60, 78]}

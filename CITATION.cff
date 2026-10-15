@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "water-quality-uncertainty-benchmark: calibrated uncertainty for spatial water-quality prediction under distribution shift"
+type: software
+authors:
+  - family-names: "Sultan"
+    given-names: "Muhammad Meelad"
+version: "0.1.0"
+license: MIT
+repository-code: "https://github.com/meelad-sultan/water-quality-uncertainty-benchmark"
+keywords: [water quality, groundwater, arsenic, uncertainty quantification, conformal prediction, spatial cross-validation, distribution shift]

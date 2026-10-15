@@ -1,0 +1,8 @@
+# Ablation: the same wells, but only coordinates as inputs (no co-measured water chemistry).
+extends: real_punjab.yaml
+experiments:
+  cv_study: {reps: 3, schemes: [random, block, region]}
+  scarcity: {fractions: [0.25, 1.0], reps: 1, models: [qgbm], methods: [none, cqr, cqr+iw]}
+real:
+  name: "North Punjab wells, coordinates only (ablation)"
+  columns: {lat: lat, lon: lon, target: as_ugL, covariates: [], region: null, time: null, site: null}

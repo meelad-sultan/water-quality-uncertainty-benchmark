@@ -1,0 +1,8 @@
+extends: default.yaml
+synthetic: {n_sites: 400, temporal: {n_sites: 80, obs_per_site: 8, years: 4}}
+gp: {max_n: 150}
+qgbm: {max_iter: 40}
+experiments:
+  cv_study: {reps: 1, schemes: [random, block, region]}
+  scarcity: {fractions: [0.25, 1.0], reps: 1, models: [qgbm], methods: [none, cqr]}
+  spatiotemporal: {reps: 1, models: [naive, qgbm], methods: [none, cqr]}
