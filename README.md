@@ -10,6 +10,8 @@ A reproducible benchmark of spatial validation and conformal prediction for wate
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 [![CI](https://github.com/meelad-sultan/water-quality-uncertainty-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/meelad-sultan/water-quality-uncertainty-benchmark/actions/workflows/ci.yml)
+[![DOI](https://zenodo.org/badge/1421086505.svg)](https://doi.org/10.5281/zenodo.23402575)
+
 
 </div>
 
@@ -602,7 +604,7 @@ flowchart TD
 
 ## 17. Citation, licence, references
 
-**Cite as** (see `CITATION.cff`): Sultan, M. M. (2026). *water-quality-uncertainty-benchmark: calibrated uncertainty for spatial water-quality prediction under distribution shift* (v0.1.0). GitHub repository.
+**Cite as** (see `CITATION.cff`): Sultan, M. M. (2026). *water-quality-uncertainty-benchmark: calibrated uncertainty for spatial water-quality prediction under distribution shift* (v0.1.0). DOI: [10.5281/zenodo.23402575](https://doi.org/10.5281/zenodo.23402575).
 
 **Licence:** MIT for the code (see `LICENSE`). Data are **not** covered by this licence; follow the terms of the original sources.
 
